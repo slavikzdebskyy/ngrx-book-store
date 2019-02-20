@@ -72,9 +72,8 @@ export class BookDetailsComponent implements OnInit {
 
   removeBook() {
     this.bookService.deleteBook(this.selectedBook).subscribe(res => {
-      console.log(res);
+      this.router.navigate(['']);
     });
-    this.router.navigate(['']);
   }
 
 }

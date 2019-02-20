@@ -12,23 +12,25 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material';
+import {MatInputModule} from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
+import { BookDetailsComponent } from './components/book-details/book-details.component';
+import { BookFormComponent } from './components/book-form/book-form.component';
 
 import { bookReducer } from './redux-store/book.reducer';
 import { BookService } from './services/book.service';
-import { BookDetailsComponent } from './components/book-details/book-details.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    BookFormComponent
   ],
   imports: [
     BrowserModule,

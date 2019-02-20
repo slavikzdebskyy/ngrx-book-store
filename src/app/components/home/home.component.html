@@ -6,7 +6,7 @@
     </mat-form-field>
     <div class="head-cont">
       <h2 mat-subheader>Books list</h2>
-      <button mat-flat-button color="accent" (click)="addNewBook()">Add new Book</button>
+      <button mat-flat-button color="accent" routerLink="add-new-book">Add new Book</button>
     </div>
     <mat-divider></mat-divider>
     <mat-list-item *ngFor="let book of filteredBooks">

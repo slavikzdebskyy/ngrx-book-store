@@ -50,4 +50,11 @@ export class BookService {
     );
   }
 
+  addNewBook(newBook: Book): Observable<Book> {
+    const request = `${this.endPoint}/posts`;
+    return this.http.post(request, newBook).pipe(
+      map((response: Book) => response)
+    );
+  }
+
 }
