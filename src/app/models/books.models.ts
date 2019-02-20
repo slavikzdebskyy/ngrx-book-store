@@ -3,7 +3,8 @@ export class Book {
     public book_name: string,
     public book_autor: string,
     public genre: string,
-    public id: number
+    public id: number,
+    public isSelected: boolean = false
   ) {}
 }
 
