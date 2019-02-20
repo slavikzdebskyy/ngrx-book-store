@@ -1,16 +1,28 @@
 <div class="list-container">
-  <mat-form-field class="full-width">
-    <input matInput placeholder="Search" [(ngModel)]="serchValue" (keyup)="search()">
-  </mat-form-field>
+
   <mat-list>
-    <h2 mat-subheader>Books list</h2>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Search" [(ngModel)]="serchValue" (keyup)="search()">
+    </mat-form-field>
+    <div class="head-cont">
+      <h2 mat-subheader>Books list</h2>
+      <button mat-flat-button color="accent" (click)="addNewBook()">Add new Book</button>
+    </div>
     <mat-divider></mat-divider>
-    <mat-list-item *ngFor="let book of filteredBooks" routerLink="book-details/{{book.id}}">
+    <mat-list-item *ngFor="let book of filteredBooks">
       <mat-icon mat-list-icon svgIcon="book-icon"></mat-icon>
-      <h3 mat-line>{{book.book_name}}</h3>
-      <p mat-line> {{book.book_autor}} </p>
-      <p mat-line> {{book.genre}} </p>
-      <mat-icon svgIcon="favorite" *ngIf="book.isSelected"></mat-icon>
+      <div class="list-item-cont"  routerLink="book-details/{{book.id}}">
+        <h3 class="book-name">Book: {{book.book_name}}</h3>
+        <p><b>Author: </b><i>{{book.book_autor}}</i></p>
+        <p><b>Genre: </b><i>{{book.genre}}</i></p>
+      </div>
+
+      <mat-icon [svgIcon]="book.isSelected ? 'favorite' : 'no-favorite'"  (click)="setFavoriteBook(book)"></mat-icon>
+      <!-- <div>
+        <button mat-fab color="accent" (click)="setFavoriteBook(book)">
+          Favorite
+        </button>
+      </div> -->
       <mat-divider></mat-divider>
     </mat-list-item>
   </mat-list>

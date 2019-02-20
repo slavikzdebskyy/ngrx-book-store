@@ -38,7 +38,8 @@ export class BookDetailsComponent implements OnInit {
           book_name: new FormControl(this.selectedBook.book_name, Validators.required),
           book_autor: new FormControl(this.selectedBook.book_autor, Validators.required),
           genre: new FormControl(this.selectedBook.genre, Validators.required),
-          id: new FormControl(this.selectedBook.id)
+          id: new FormControl(this.selectedBook.id),
+          isSelected: new FormControl(this.selectedBook.isSelected)
         });
       }
     });
@@ -49,7 +50,12 @@ export class BookDetailsComponent implements OnInit {
   }
 
   updateBook() {
-    this.selectedBook = new Book(this.bookForm.value.book_name, this.bookForm.value.book_autor, this.bookForm.value.genre, this.bookForm.value.id);
+    this.selectedBook = new Book(
+      this.bookForm.value.book_name,
+      this.bookForm.value.book_autor,
+      this.bookForm.value.genre,
+      this.bookForm.value.id,
+      this.bookForm.value.isSelected);
     this.bookService.updateBook(this.selectedBook).subscribe(book => {
       this.store.dispatch(new UpdateBook(book));
     });

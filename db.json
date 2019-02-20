@@ -5,32 +5,35 @@
       "book_autor": "Brandais Melloi",
       "genre": "incremental",
       "id": 6,
-      "isSelected": true
+      "isSelected": false
     },
     {
       "book_name": "Black-crowned night heron",
       "book_autor": "1234567",
       "genre": "Realigned",
       "id": 7,
-      "isSelected": true
+      "isSelected": false
     },
     {
-      "id": 8,
       "book_name": "Cockatoo, slender-billed",
-      "book_autor": "Lida Midgley",
-      "genre": "orchestration"
+      "book_autor": "Kolobok",
+      "genre": "orchestration",
+      "id": 8,
+      "isSelected": false
     },
     {
       "id": 9,
       "book_name": "Screamer, southern",
       "book_autor": "Franny Snoxall",
-      "genre": "firmware"
+      "genre": "firmware",
+      "isSelected": false
     },
     {
       "id": 10,
       "book_name": "Tortoise, burmese brown mountain",
       "book_autor": "Sarene Beveredge",
-      "genre": "collaboration"
+      "genre": "collaboration",
+      "isSelected": false
     },
     {
       "id": 11,

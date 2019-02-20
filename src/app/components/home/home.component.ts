@@ -7,6 +7,7 @@ import { BookState } from 'src/app/redux-store/state';
 import { BookService } from 'src/app/services/book.service';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { UpdateBook } from 'src/app/redux-store/book.actions';
 
 @Component({
   selector: 'app-home',
@@ -31,6 +32,9 @@ export class HomeComponent implements OnInit {
     iconRegistry.addSvgIcon(
       'favorite',
         sanitizer.bypassSecurityTrustResourceUrl('assets/svg/star.svg'));
+    iconRegistry.addSvgIcon(
+      'no-favorite',
+        sanitizer.bypassSecurityTrustResourceUrl('assets/svg/star_e.svg'));
   }
 
   ngOnInit() {
@@ -42,6 +46,15 @@ export class HomeComponent implements OnInit {
   }
 
  search() {
-   this.filteredBooks = this.books.filter(book => book.book_name.includes(this.serchValue));
+   this.filteredBooks = this.books.filter(book => book.book_name.toLowerCase().includes(this.serchValue.toLowerCase()));
  }
+addNewBook() {
+
+}
+ setFavoriteBook(book: Book) {
+  book.isSelected = !book.isSelected;
+  this.bookService.updateBook(book).subscribe(SelectedBook => {
+    this.store.dispatch(new UpdateBook(SelectedBook));
+  });
+}
 }
