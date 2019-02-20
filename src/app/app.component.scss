@@ -1,0 +1,7 @@
+span.nav {
+  margin: 0 20px 0;
+  outline: none;
+  &:last-child {
+    cursor: pointer;
+  }
+}

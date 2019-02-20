@@ -2,7 +2,7 @@
   <mat-list>
     <h2 mat-subheader>Books list</h2>
     <mat-divider></mat-divider>
-    <mat-list-item *ngFor="let book of (state | async).books" router-link="book">
+    <mat-list-item *ngFor="let book of (state | async).books" routerLink="book-details/{{book.id}}">
       <mat-icon mat-list-icon svgIcon="book-icon"></mat-icon>
       <h3 mat-line>{{book.book_name}}</h3>
       <p mat-line> {{book.book_autor}} </p>

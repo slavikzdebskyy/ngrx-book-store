@@ -1,0 +1,28 @@
+<div class="book-detail-container">
+  <mat-card class="example-card" *ngIf="selectedBook" >
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{selectedBook.book_name}}</mat-card-title>
+      <mat-card-subtitle>{{selectedBook.book_autor}}</mat-card-subtitle>
+      <mat-card-subtitle>{{selectedBook.genre}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-actions>
+      <button mat-raised-button color="accent" (click)="setFavoriteBook()">Favorite</button>
+      <button mat-raised-button color="primary" (click)="editBook()">Edit</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <form [formGroup]="bookForm" *ngIf="isEditBook" (ngSubmit)="updateBook()">
+    <mat-form-field>
+      <input matInput placeholder="Input" formControlName="book_name" >
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Input" formControlName="book_autor" >
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Input" formControlName="genre" >
+    </mat-form-field>
+    <button mat-raised-button type="submit" color="warn">Save</button>
+  </form>
+</div>

@@ -1,16 +1,18 @@
 {
   "posts": [
     {
-      "id": 6,
-      "book_name": "Mississippi alligator",
+      "book_name": "32423423432",
       "book_autor": "Brandais Melloi",
-      "genre": "incremental"
+      "genre": "incremental",
+      "id": 6,
+      "isSelected": true
     },
     {
-      "id": 7,
       "book_name": "Black-crowned night heron",
-      "book_autor": "Shandeigh Mulleary",
-      "genre": "Realigned"
+      "book_autor": "1234567",
+      "genre": "Realigned",
+      "id": 7,
+      "isSelected": true
     },
     {
       "id": 8,

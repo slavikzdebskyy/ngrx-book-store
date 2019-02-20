@@ -10,4 +10,5 @@ export class Book {
 
 export interface Books {
   books: Book[];
+  selectedBook: Book;
 }

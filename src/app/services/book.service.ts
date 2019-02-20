@@ -7,6 +7,7 @@ import {Observable} from 'rxjs';
 import {Book} from '../models/books.models';
 import {map} from 'rxjs/operators';
 import { environment } from './../../environments/environment';
+import { SelectBook } from './../redux-store/book.actions';
 
 @Injectable()
 export class BookService {
@@ -27,6 +28,25 @@ export class BookService {
       this.store.dispatch(new LoadBooks(books));
     });
   }
+
+  selectBook(id): void {
+    this.preloadBooks().subscribe(books => {
+      this.store.dispatch(new LoadBooks(books));
+      this.store.dispatch(new SelectBook(id));
+    });
+  }
+
+  updateBook(updatedBook: Book): Observable<Book> {
+    const request = `${this.endPoint}/posts/${updatedBook.id}`;
+    return this.http.put(request, updatedBook).pipe(
+      map((response: Book) => response)
+    );
+  }
+
+      // .toPromise()
+      // .then((book: Book) => {
+      //   this.store.dispatch(new UpdateBook(book));
+      // });
 
 
 }

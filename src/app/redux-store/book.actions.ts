@@ -24,7 +24,7 @@ export class UpdateBook implements Action {
 
 export class SelectBook implements Action {
   readonly type = SELECT_BOOK;
-  constructor(public payload: Book) {}
+  constructor(public payload: number) {}
 }
 
 export class LoadBooks implements Action {
