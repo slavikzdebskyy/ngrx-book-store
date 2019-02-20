@@ -15,13 +15,13 @@
 
   <form [formGroup]="bookForm" *ngIf="isEditBook" (ngSubmit)="updateBook()">
     <mat-form-field>
-      <input matInput placeholder="Input" formControlName="book_name" >
+      <input matInput placeholder="Book Name" formControlName="book_name" >
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Input" formControlName="book_autor" >
+      <input matInput placeholder="Author" formControlName="book_autor" >
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Input" formControlName="genre" >
+      <input matInput placeholder="Genre" formControlName="genre" >
     </mat-form-field>
     <button mat-raised-button type="submit" color="warn">Save</button>
   </form>
