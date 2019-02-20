@@ -3,7 +3,7 @@ import { BookState } from 'src/app/redux-store/state';
 import { Store } from '@ngrx/store';
 import { Books, Book } from 'src/app/models/books.models';
 import { Observable } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BookService } from 'src/app/services/book.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UpdateBook } from 'src/app/redux-store/book.actions';
@@ -22,6 +22,7 @@ export class BookDetailsComponent implements OnInit {
 
   constructor(private store: Store<BookState>,
               private route: ActivatedRoute,
+              private router: Router,
               private bookService: BookService) {
 
     this.bookService.loadBooks();
@@ -67,6 +68,13 @@ export class BookDetailsComponent implements OnInit {
     this.bookService.updateBook(this.selectedBook).subscribe(book => {
       this.store.dispatch(new UpdateBook(book));
     });
+  }
+
+  removeBook() {
+    this.bookService.deleteBook(this.selectedBook).subscribe(res => {
+      console.log(res);
+    });
+    this.router.navigate(['']);
   }
 
 }

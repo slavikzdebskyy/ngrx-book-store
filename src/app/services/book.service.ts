@@ -43,4 +43,11 @@ export class BookService {
     );
   }
 
+  deleteBook(book: Book): Observable<Book> {
+    const request = `${this.endPoint}/posts/${book.id}`;
+    return this.http.delete(request).pipe(
+      map((response: Book) => response)
+    );
+  }
+
 }

@@ -1,27 +1,6 @@
 {
   "posts": [
     {
-      "book_name": "32423423432",
-      "book_autor": "Brandais Melloi",
-      "genre": "incremental",
-      "id": 6,
-      "isSelected": false
-    },
-    {
-      "book_name": "Black-crowned night heron",
-      "book_autor": "1234567",
-      "genre": "Realigned",
-      "id": 7,
-      "isSelected": false
-    },
-    {
-      "book_name": "Cockatoo, slender-billed",
-      "book_autor": "Kolobok",
-      "genre": "orchestration",
-      "id": 8,
-      "isSelected": false
-    },
-    {
       "id": 9,
       "book_name": "Screamer, southern",
       "book_autor": "Franny Snoxall",
