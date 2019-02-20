@@ -1,6 +1,6 @@
 import { Book } from '../models/books.models';
 
-export interface AppState {
+export interface BookState {
   bookStore: {
     books: Book[]
   };

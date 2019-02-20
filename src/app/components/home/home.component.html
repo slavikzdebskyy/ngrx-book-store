@@ -1,3 +1,8 @@
 <p>
   home works!
 </p>
+<ul>
+  <li *ngFor="let c of (state | async).books">
+{{c.book_autor}}
+  </li>
+</ul>
