@@ -40,6 +40,7 @@ export class HomeComponent implements OnInit {
       this.filteredBooks = books.books;
     });
   }
+
  search() {
    this.filteredBooks = this.books.filter(book => book.book_name.includes(this.serchValue));
  }

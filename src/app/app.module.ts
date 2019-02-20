@@ -32,7 +32,7 @@ import { BookDetailsComponent } from './components/book-details/book-details.com
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
     AppRoutingModule,
     StoreModule.forRoot({bookStore: bookReducer}),
     StoreRouterConnectingModule,

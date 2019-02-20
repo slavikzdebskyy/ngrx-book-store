@@ -24,8 +24,8 @@ export class BookDetailsComponent implements OnInit {
               private route: ActivatedRoute,
               private bookService: BookService) {
 
-                this.bookService.loadBooks();
-               }
+    this.bookService.loadBooks();
+  }
 
   ngOnInit() {
     this.state = this.store.select('bookStore');
@@ -33,7 +33,7 @@ export class BookDetailsComponent implements OnInit {
     this.bookService.selectBook(id);
     this.state.subscribe(res => {
       if (res.selectedBook) {
-        this.selectedBook = res.selectedBook; console.log('dsfsdf', this.selectedBook.book_name);
+        this.selectedBook = res.selectedBook;
         this.bookForm = new FormGroup({
           book_name: new FormControl(this.selectedBook.book_name, Validators.required),
           book_autor: new FormControl(this.selectedBook.book_autor, Validators.required),

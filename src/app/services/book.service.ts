@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Store} from '@ngrx/store';
 import {BookState} from '../redux-store/state';
-import {AddBook, DeleteBook, LoadBooks, UpdateBook} from '../redux-store/book.actions';
+import {LoadBooks} from '../redux-store/book.actions';
 import {Observable} from 'rxjs';
 import {Book} from '../models/books.models';
 import {map} from 'rxjs/operators';
@@ -42,11 +42,5 @@ export class BookService {
       map((response: Book) => response)
     );
   }
-
-      // .toPromise()
-      // .then((book: Book) => {
-      //   this.store.dispatch(new UpdateBook(book));
-      // });
-
 
 }
